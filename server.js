@@ -17,8 +17,6 @@ app.use(express.static("public"));
 app.use(express.json());
 
 app.post("/checkout", async (req, res) => {
-  console.log("📦 Incoming /checkout body:", req.body);
-
   const orderId = crypto.randomUUID().slice(0, 5).toUpperCase();
 
   try {
@@ -53,19 +51,19 @@ app.post("/checkout", async (req, res) => {
       },
     ]);
     if (error) {
-      console.error("❌ Supabase insert error:", error.message);
+      console.error("Supabase insert error:", error.message);
       throw error;
     }
 
     const session = await stripe.checkout.sessions.create({
       line_items: lineItems,
       mode: "payment",
-      success_url: `${process.env.FRONTEND_URL}/${orderId}`,
+      success_url: `${process.env.FRONTEND_URL}/order/${orderId}`,
       cancel_url: `${process.env.FRONTEND_URL}/home`,
     });
     res.status(200).json({ url: session.url });
   } catch (err) {
-    console.error("💥 Stripe error:", err.message);
+    console.error("Stripe error:", err.message);
     res.status(400).json({ error: err.message });
   }
 });
