@@ -40,27 +40,32 @@ app.post("/checkout", async (req, res) => {
       price: item.id,
       quantity: item.quantity,
     }));
-    console.log(lineItems);
 
-    const { error } = await supabase.from("orders").insert([
-      {
-        orderId,
-        items,
-        total,
-        quantity,
-        status: "pending",
-        orderDate: createdAt.toISOString(),
-        estimatedDelivery: estimatedDelivery.toISOString(),
-      },
-    ]);
-    if (error) throw error;
+    // const { error } = await supabase.from("orders").insert([
+    //   {
+    //     orderId,
+    //     items,
+    //     total,
+    //     quantity,
+    //     status: "pending",
+    //     orderDate: createdAt.toISOString(),
+    //     estimatedDelivery: estimatedDelivery.toISOString(),
+    //   },
+    // ]);
+    // if (error) {
+    //   console.error("❌ Supabase insert error:", error.message);
+    //   throw error;
+    // }
 
     const session = await stripe.checkout.sessions.create({
       line_items: lineItems,
       mode: "payment",
       success_url: `${process.env.FRONTEND_URL}/${orderId}`,
+
       cancel_url: `${process.env.FRONTEND_URL}/home`,
     });
+    console.log("Frontend success URL:", process.env.FRONTEND_URL);
+
     res.status(200).json({ url: session.url });
   } catch (err) {
     console.error("💥 Stripe error:", err.message);
