@@ -40,6 +40,7 @@ app.post("/checkout", async (req, res) => {
       price: item.id,
       quantity: item.quantity,
     }));
+    console.log(lineItems);
 
     const { error } = await supabase.from("orders").insert([
       {
