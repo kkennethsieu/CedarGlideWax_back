@@ -7,8 +7,8 @@ const stripe = require("stripe")(process.env.SECRET_KEY);
 const { createClient } = require("@supabase/supabase-js");
 
 const supabase = createClient(
-  process.env.VITE_SUPABASE_URL,
-  process.env.VITE_SUPABASE_KEY
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_KEY
 );
 
 const app = express();
@@ -61,11 +61,8 @@ app.post("/checkout", async (req, res) => {
       line_items: lineItems,
       mode: "payment",
       success_url: `${process.env.FRONTEND_URL}/${orderId}`,
-
       cancel_url: `${process.env.FRONTEND_URL}/home`,
     });
-    console.log("Frontend success URL:", process.env.FRONTEND_URL);
-
     res.status(200).json({ url: session.url });
   } catch (err) {
     console.error("💥 Stripe error:", err.message);
