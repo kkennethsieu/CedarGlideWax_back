@@ -29,8 +29,8 @@ cedarwax/
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/cedarwax.git
-cd cedarwax
+git clone https://github.com/kkennethsieu/cedarglidewax_front.git
+git clone https://github.com/kkennethsieu/cedarglidewax_back.git
 ```
 
 2. **Install dependencies:**
@@ -38,14 +38,14 @@ cd cedarwax
 #### Frontend:
 
 ```bash
-cd frontend
+cd cedarglidewax_front
 npm install
 ```
 
 #### Backend:
 
 ```bash
-cd ../backend
+cd cedarglidewax_back
 npm install
 ```
 
@@ -73,24 +73,6 @@ Runs on: `http://localhost:4000`
 
 ---
 
-## 🌐 Deployment
-
-### Frontend
-
-- Hosted on [Vercel](https://vercel.com/)
-- Root directory: `/frontend`
-- Build command: `npm run build`
-- Output directory: `dist`
-
-### Backend
-
-- Hosted on [Render](https://render.com/)
-- Root directory: `/backend`
-- Start command: `npm start`
-- Make sure to add environment variables in Render’s settings
-
----
-
 ## 🛒 Features
 
 - 🧴 Product cards with reviews, prices, and images
@@ -99,23 +81,6 @@ Runs on: `http://localhost:4000`
 - 🧠 Redux state management
 - ⚡ Fast and responsive UI with Tailwind CSS
 - 🔐 CORS-enabled Express server for secure communication
-
----
-
-## 🌍 Environment Variables
-
-### Frontend (`/frontend/.env`)
-
-```
-VITE_BACKEND_URL=https://your-backend-url.onrender.com
-```
-
-### Backend (`/backend/.env`)
-
-```
-STRIPE_SECRET_KEY=your_stripe_secret_key
-CLIENT_URL=https://your-frontend-url.vercel.app
-```
 
 ---
 
@@ -129,17 +94,11 @@ CLIENT_URL=https://your-frontend-url.vercel.app
 
 ---
 
-## 📸 Screenshots
-
-_(Optional: Add images of your product cards, cart UI, or Stripe checkout page here.)_
-
----
-
 ## 🙋‍♂️ Author
 
 Kenneth Sieu  
-🧑‍💻 GitHub: [@yourgithub](https://github.com/yourgithub)  
-🌐 Portfolio: [your-portfolio-link.com](https://your-portfolio-link.com)
+🧑‍💻 GitHub: [https://kenny-sieu-portfolio.vercel.app/]
+🌐 Portfolio: [https://kenny-sieu-portfolio.vercel.app/]
 
 ---
 
