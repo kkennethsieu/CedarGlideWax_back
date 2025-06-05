@@ -41,21 +41,21 @@ app.post("/checkout", async (req, res) => {
       quantity: item.quantity,
     }));
 
-    // const { error } = await supabase.from("orders").insert([
-    //   {
-    //     orderId,
-    //     items,
-    //     total,
-    //     quantity,
-    //     status: "pending",
-    //     orderDate: createdAt.toISOString(),
-    //     estimatedDelivery: estimatedDelivery.toISOString(),
-    //   },
-    // ]);
-    // if (error) {
-    //   console.error("❌ Supabase insert error:", error.message);
-    //   throw error;
-    // }
+    const { error } = await supabase.from("orders").insert([
+      {
+        orderId,
+        items,
+        total,
+        quantity,
+        status: "pending",
+        orderDate: createdAt.toISOString(),
+        estimatedDelivery: estimatedDelivery.toISOString(),
+      },
+    ]);
+    if (error) {
+      console.error("❌ Supabase insert error:", error.message);
+      throw error;
+    }
 
     const session = await stripe.checkout.sessions.create({
       line_items: lineItems,
