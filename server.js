@@ -17,10 +17,12 @@ app.use(express.static("public"));
 app.use(express.json());
 
 app.post("/checkout", async (req, res) => {
+  console.log("📦 Incoming /checkout body:", req.body);
+
   const orderId = crypto.randomUUID().slice(0, 5).toUpperCase();
 
   try {
-    const { items, name, email } = req.body;
+    const { items } = req.body;
 
     // Calculate total and total quantity
     const total = items.reduce(
@@ -42,8 +44,6 @@ app.post("/checkout", async (req, res) => {
     const { error } = await supabase.from("orders").insert([
       {
         orderId,
-        name,
-        email,
         items,
         total,
         quantity,
