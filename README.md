@@ -12,7 +12,34 @@ cedarwax/
 └── backend/     # Express + Stripe + CORS server
 ```
 
+## 📸 Screenshots
+
+All screenshots are located in `public/screenshots/`.
+
+<div align="center">
+
+### Landing Page
+<img src="public/screenshots/landingpage_ss.png" width="400"/>
+
+### Homepage
+<img src="public/screenshots/homepage_ss.png" width="400"/>
+
+### Cart
+<img src="public/screenshots/cart_ss.png" width="400"/>
+
+### FAQ
+<img src="public/screenshots/faq_ss.png" width="400"/>
+
+### How to Use
+<img src="public/screenshots/howtouse_ss.png" width="400"/>
+
+### Reviews
+<img src="public/screenshots/reviews_ss.png" width="400"/>
+
+</div>
+
 ---
+
 
 ## ⚙️ Getting Started
 
@@ -75,12 +102,12 @@ Runs on: `http://localhost:4000`
 
 ## 🛒 Features
 
-- 🧴 Product cards with reviews, prices, and images
-- 🛒 Shopping cart with quantity control
-- 💳 Stripe Checkout integration
-- 🧠 Redux state management
-- ⚡ Fast and responsive UI with Tailwind CSS
-- 🔐 CORS-enabled Express server for secure communication
+- 🧴 Product cards with reviews, prices, and images  
+- 🛒 Shopping cart with quantity control  
+- 💳 Stripe Checkout integration  
+- 🧠 Redux state management  
+- ⚡ Fast and responsive UI with Tailwind CSS  
+- 🔐 CORS-enabled Express server for secure communication  
 
 ---
 
@@ -97,11 +124,6 @@ Runs on: `http://localhost:4000`
 ## 🙋‍♂️ Author
 
 Kenneth Sieu  
-🧑‍💻 GitHub: [https://kenny-sieu-portfolio.vercel.app/]
-🌐 Portfolio: [https://kenny-sieu-portfolio.vercel.app/]
+🧑‍💻 GitHub: [https://kenny-sieu-portfolio.vercel.app/]  
+🌐 Portfolio: [https://kenny-sieu-portfolio.vercel.app/]  
 
----
-
-## 🪪 License
-
-This project is licensed under the **MIT License** — free to use, modify, and distribute.
